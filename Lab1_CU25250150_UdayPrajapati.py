@@ -1,45 +1,59 @@
+# Q1. WRITE A PROGRAM TO IMPLEMENT THE PUSH AND POP
+# OPERATION ON A STACK USING AN ARRAY AND FOR LOOP.
+
 import numpy as np
 
-'''arr = np.array([1, 2, 3])
+# Creating an empty stack
+stack = np.array([], dtype=int)
 
-# Push
-arr = np.append(arr, 4)
-print("After push:", arr)
+# PUSH operation
+print("----- PUSH OPERATION -----")
 
-# Pop
-arr = np.delete(arr, -1)
-print("After pop:", arr)'''
+for value in [10, 20, 30, 40, 50]:
+    stack = np.append(stack, value)
+    print("Pushed:", value)
+    print("Stack:", stack)
 
-arr = np.array([10, 20, 30, 40, 50])
+# POP operation
+print("\n----- POP OPERATION -----")
 
-while len(arr) > 0:
-    popelement = arr[-1]       
-    print("Popping this item:", popelement)
-    
-    arr = np.delete(arr, -1)      
-    print("Array after pop:", arr)
+for i in range(len(stack)):
+    popped_element = stack[-1]
 
-    import numpy as np
+    print("Popped:", popped_element)
 
-# Create Queue
-queue = np.array([10, 20, 30])
+    stack = np.delete(stack, -1)
 
-print("Original Queue:", queue)
+    print("Stack after pop:", stack)
 
-# Enqueue Operation
-queue = np.append(queue, 40)
-print("After Enqueue:", queue)
+print("\nStack is empty.")
 
-# Dequeue Operation
-dequeued_item = queue[0]
-print("Dequeued Item:", dequeued_item)
+# Q2. WRITE A PROGRAM TO IMPLEMENT THE ENQUEUE AND DEQUEUE
+# OPERATION ON A QUEUE USING AN ARRAY AND FOR LOOP.
 
-queue = np.delete(queue, 0)
-print("After Dequeue:", queue)
+import numpy as np
 
-# Dequeue all elements
-while len(queue) > 0:
-    dequeued_item = queue[0]
-    print("Dequeued Item:", dequeued_item)
+# Creating an empty queue
+queue = np.array([], dtype=int)
+
+# ENQUEUE operation
+print("----- ENQUEUE OPERATION -----")
+
+for value in [10, 20, 30, 40, 50]:
+    queue = np.append(queue, value)
+    print("Enqueued:", value)
+    print("Queue:", queue)
+
+# DEQUEUE operation
+print("\n----- DEQUEUE OPERATION -----")
+
+for i in range(len(queue)):
+    dequeued_element = queue[0]
+
+    print("Dequeued:", dequeued_element)
+
     queue = np.delete(queue, 0)
-    print("Queue after Dequeue:", queue)
+
+    print("Queue after dequeue:", queue)
+
+print("\nQueue is empty.")
