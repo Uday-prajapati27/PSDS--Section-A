@@ -1,0 +1,18 @@
+def solve(s):
+    freq = {}
+    ans = 0
+
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+
+    for count in freq.values():
+        ans += count // 2
+
+    return ans
+
+
+T = int(input())
+
+for _ in range(T):
+    s = input().strip()
+    print(solve(s))
